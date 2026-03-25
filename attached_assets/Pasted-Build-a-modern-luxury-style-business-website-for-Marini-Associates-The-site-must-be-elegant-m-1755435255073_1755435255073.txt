@@ -1,0 +1,48 @@
+Build a modern, luxury-style business website for "Marini Associates".  
+The site must be elegant, minimalistic, mobile-friendly, and fast to load.  
+Use React + TailwindCSS for styling.  
+Design should feel high-end: white/cream background, black/charcoal text, gold accents, large serif headlines, smooth scrolling.  
+
+Structure of the website:  
+
+1. **Landing Page / Home**
+   - Hero section: "Marini Associates" with a tagline like "Expanding European Luxury Brands into South East Asia & The Middle East".
+   - Background: subtle image/video of a luxury retail or dining setting.
+   - Button to scroll to Services.
+
+2. **About Us**
+   - Brief story of Marini Associates and Lorenzo Marini (Founder).
+   - Mention track record: luxury fashion (Mugler, N°21, Sophia Webster in Bangkok), F&B (Pasticceria Cova), collaborations with LVMH, L’Oréal, Kering.
+   - Elegant portrait image placeholder.
+
+3. **Services Section**
+   Split into two main categories:
+   - **F&B**  
+     - Photo carousel (luxury café, fine dining).  
+     - Outline services: Business Planning, Design, Recruitment, Procurement, Team Training, Management.  
+   - **Real Estate & Retail**  
+     - Photo carousel (luxury boutiques, real estate interiors).  
+     - Same service outline.  
+
+4. **Team**
+   - Showcase of 2 Associates (placeholder profiles to be filled later).  
+   - 1 Advisor (placeholder profile).  
+   - Layout: elegant cards with photos, names, and short bios.
+
+5. **Contact**
+   - Contact form with fields: Name, Email, Message.  
+   - Submits directly to email: lorenzo@mariniassociates.com.  
+   - Also display company email, and possibly phone & LinkedIn link.  
+
+6. **Footer**
+   - Copyright © Marini Associates.
+   - Social media icons (LinkedIn, Instagram placeholders).
+   - Discreet and minimal.
+
+Design guidelines:
+- Lean, luxury feel, inspired by Bluebell Group and high-end consultancy sites.
+- Smooth transitions and subtle hover effects.
+- Optimize images for fast loading.
+- Easy to navigate on both desktop and mobile.
+
+Deliver clean, production-ready React code using Tailwind for styling.  

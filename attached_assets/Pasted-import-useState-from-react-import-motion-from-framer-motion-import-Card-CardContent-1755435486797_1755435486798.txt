@@ -1,0 +1,116 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Mail, Linkedin, Instagram } from "lucide-react";
+
+export default function App() {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    window.location.href = `mailto:lorenzo@mariniassociates.com?subject=Website Contact from ${form.name}&body=${form.message}%0D%0A%0D%0AReply to: ${form.email}`;
+  };
+
+  return (
+    <div className="font-serif bg-white text-gray-900">
+      {/* Hero Section */}
+      <section className="h-screen flex flex-col justify-center items-center text-center px-6 bg-[url('https://source.unsplash.com/1600x900/?luxury,architecture')] bg-cover bg-center">
+        <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="text-5xl md:text-7xl font-bold text-black drop-shadow-lg">
+          Marini Associates
+        </motion.h1>
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="mt-6 text-xl md:text-2xl text-black max-w-2xl">
+          Expanding European Luxury Brands into South East Asia & The Middle East
+        </motion.p>
+        <Button className="mt-10 bg-black text-white hover:bg-gray-800 rounded-2xl px-6 py-3">Discover Services</Button>
+      </section>
+
+      {/* About Us */}
+      <section id="about" className="max-w-6xl mx-auto py-20 px-6">
+        <h2 className="text-4xl font-bold mb-6">About Us</h2>
+        <p className="text-lg leading-relaxed mb-4">
+          Founded by Lorenzo Marini, Marini Associates specializes in guiding European luxury brands as they establish a presence in South East Asia and the Middle East. With experience opening Mugler, N°21, and Sophia Webster boutiques in Bangkok, and the luxury café Pasticceria Cova, we bring unmatched expertise in F&B and luxury real estate. Past collaborations include LVMH, L’Oréal, and Kering.
+        </p>
+      </section>
+
+      {/* Services */}
+      <section id="services" className="bg-gray-50 py-20 px-6">
+        <h2 className="text-4xl font-bold text-center mb-12">Our Services</h2>
+        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <Card className="rounded-2xl shadow-lg">
+            <CardContent className="p-6">
+              <img src="https://source.unsplash.com/800x500/?restaurant,luxury" alt="F&B" className="rounded-xl mb-4" />
+              <h3 className="text-2xl font-semibold mb-3">Food & Beverage</h3>
+              <p className="mb-4 text-gray-700">We help European luxury F&B concepts expand into Asia and the Middle East with turnkey services:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700">
+                <li>Business Planning</li>
+                <li>Design & Concept</li>
+                <li>Recruitment</li>
+                <li>Procurement</li>
+                <li>Team Training</li>
+                <li>Management</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="rounded-2xl shadow-lg">
+            <CardContent className="p-6">
+              <img src="https://source.unsplash.com/800x500/?luxury,store" alt="Real Estate" className="rounded-xl mb-4" />
+              <h3 className="text-2xl font-semibold mb-3">Real Estate & Retail</h3>
+              <p className="mb-4 text-gray-700">Advisory for luxury retail expansion into prime real estate locations across Asia and the Middle East:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700">
+                <li>Business Planning</li>
+                <li>Design & Store Concept</li>
+                <li>Recruitment</li>
+                <li>Procurement</li>
+                <li>Team Training</li>
+                <li>Management</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section id="team" className="max-w-6xl mx-auto py-20 px-6">
+        <h2 className="text-4xl font-bold text-center mb-12">Our Team</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          {["Associate 1", "Associate 2", "Advisor"].map((role, idx) => (
+            <Card key={idx} className="rounded-2xl shadow-md text-center">
+              <CardContent className="p-6">
+                <img src="https://source.unsplash.com/200x200/?portrait,business" alt={role} className="rounded-full mx-auto mb-4" />
+                <h3 className="text-xl font-semibold">{role}</h3>
+                <p className="text-gray-600">Short bio coming soon...</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="bg-gray-100 py-20 px-6">
+        <h2 className="text-4xl font-bold text-center mb-8">Contact Us</h2>
+        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-4">
+          <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Your Name" className="w-full p-3 border rounded-lg" required />
+          <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="Your Email" className="w-full p-3 border rounded-lg" required />
+          <textarea name="message" value={form.message} onChange={handleChange} placeholder="Your Message" className="w-full p-3 border rounded-lg h-32" required />
+          <Button type="submit" className="w-full bg-black text-white rounded-2xl py-3 hover:bg-gray-800">Send Message</Button>
+        </form>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black text-white py-8 text-center">
+        <p>© {new Date().getFullYear()} Marini Associates. All Rights Reserved.</p>
+        <div className="flex justify-center space-x-6 mt-4">
+          <a href="mailto:lorenzo@mariniassociates.com" className="hover:text-gray-400"><Mail /></a>
+          <a href="#" className="hover:text-gray-400"><Linkedin /></a>
+          <a href="#" className="hover:text-gray-400"><Instagram /></a>
+        </div>
+      </footer>
+    </div>
+  );
+}
