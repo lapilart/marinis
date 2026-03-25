@@ -226,7 +226,7 @@ export default function Home() {
           muted={true}
           playsInline={true}
         >
-          <source src="/hero-background.mp4" type="video/mp4" />
+          <source src={`${import.meta.env.BASE_URL}hero-background.mp4`} type="video/mp4" />
         </video>
         
         {/* Dark Overlay */}
@@ -266,7 +266,7 @@ export default function Home() {
                 muted
                 playsInline
               >
-                <source src="/cova-contract-video.mp4" type="video/mp4" />
+                <source src={`${import.meta.env.BASE_URL}cova-contract-video.mp4`} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               
